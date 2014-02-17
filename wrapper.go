@@ -276,3 +276,43 @@ func Critical(arg0 interface{}, args ...interface{}) error {
 	}
 	return nil
 }
+
+// Finest logs with a tag in "[]".
+func FinestWithTag(tag string, args ...interface{}) {
+	Global.Finest("[%s] %v", tag, args)
+}
+
+// Fine logs with a tag in "[]".
+func FineWithTag(tag string, args ...interface{}) {
+	Global.Fine("[%s] %v", tag, args)
+}
+
+// Debug logs with a tag in "[]".
+func DebugWithTag(tag string, args ...interface{}) {
+	Global.Debug("[%s] %v", tag, args)
+}
+
+// Trace logs with a tag in "[]".
+func TraceWithTag(tag string, args ...interface{}) {
+	Global.Trace("[%s] %v", tag, args)
+}
+
+// Info logs with a tag in "[]".
+func InfoWithTag(tag string, args ...interface{}) {
+	Global.Info("[%s] %v", tag, args)
+}
+
+// Warn logs with a tag in "[]".
+func WarnWithTag(tag string, args ...interface{}) (err error) {
+	return Global.Warn("[%s] %v", tag, args)
+}
+
+// Error logs with a tag in "[]".
+func ErrorWithTag(tag string, args ...interface{}) (err error) {
+	return Global.Error("[%s] %v", tag, args)
+}
+
+// Critical logs with a tag in "[]".
+func CriticalWithTag(tag string, args ...interface{}) (err error) {
+	return Global.Critical("[%s] %v", tag, args)
+}

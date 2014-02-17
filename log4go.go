@@ -169,6 +169,7 @@ func (log Logger) Close() {
 		filt.Close()
 		delete(log, name)
 	}
+	time.Sleep(50 * time.Millisecond) // Try to give console I/O time to complete
 }
 
 // Add a new LogWriter to the Logger which will only log messages at lvl or
@@ -481,4 +482,44 @@ func (log Logger) Critical(arg0 interface{}, args ...interface{}) error {
 	}
 	log.intLogf(lvl, msg)
 	return errors.New(msg)
+}
+
+// Finest logs with a tag in "[]".
+func (log Logger) FinestWithTag(tag string, args ...interface{}) {
+	log.Finest("[%s] %v", tag, args)
+}
+
+// Fine logs with a tag in "[]".
+func (log Logger) FineWithTag(tag string, args ...interface{}) {
+	log.Fine("[%s] %v", tag, args)
+}
+
+// Debug logs with a tag in "[]".
+func (log Logger) DebugWithTag(tag string, args ...interface{}) {
+	log.Debug("[%s] %v", tag, args)
+}
+
+// Trace logs with a tag in "[]".
+func (log Logger) TraceWithTag(tag string, args ...interface{}) {
+	log.Trace("[%s] %v", tag, args)
+}
+
+// Info logs with a tag in "[]".
+func (log Logger) InfoWithTag(tag string, args ...interface{}) {
+	log.Info("[%s] %v", tag, args)
+}
+
+// Warn logs with a tag in "[]".
+func (log Logger) WarnWithTag(tag string, args ...interface{}) (err error) {
+	return log.Warn("[%s] %v", tag, args)
+}
+
+// Error logs with a tag in "[]".
+func (log Logger) ErrorWithTag(tag string, args ...interface{}) (err error) {
+	return log.Error("[%s] %v", tag, args)
+}
+
+// Critical logs with a tag in "[]".
+func (log Logger) CriticalWithTag(tag string, args ...interface{}) (err error) {
+	return log.Critical("[%s] %v", tag, args)
 }
