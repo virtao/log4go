@@ -1,11 +1,11 @@
 Please see http://log4go.googlecode.com/
 
 Installation:
-- Run `goinstall log4go.googlecode.com/hg`
+- Run `go get github.com/virtao/log4go`
 
 Usage:
 - Add the following import:
-import l4g "log4go.googlecode.com/hg"
+import l4g "github.com/virtao/log4go"
 
 Acknowledgements:
 - pomack

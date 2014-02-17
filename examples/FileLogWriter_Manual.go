@@ -8,7 +8,7 @@ import (
 	"time"
 )
 
-import l4g "code.google.com/p/log4go"
+import l4g "github.com/virtao/log4go"
 
 const (
 	filename = "flw.log"
@@ -16,7 +16,7 @@ const (
 
 func main() {
 	// Get a new logger instance
-	log := l4g.NewLogger()
+	log := make(l4g.Logger, 0)
 
 	// Create a default logger that is logging messages of FINE or higher
 	log.AddFilter("file", l4g.FINE, l4g.NewFileLogWriter(filename, false))
